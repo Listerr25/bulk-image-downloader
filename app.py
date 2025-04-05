@@ -42,8 +42,8 @@ if st.button("Download Images"):
             st.write(f"Downloaded images for **{folder_name}**.")
         
         st.info("Zipping downloaded images...")
-        # Create a zip file from the simple_images folder
-        zip_filename = "simple_images.zip"
+        # Create a zip file name based on the keywords
+        zip_filename = f"{'_'.join(lst)}.zip"
         with zipfile.ZipFile(zip_filename, "w", zipfile.ZIP_DEFLATED) as zipf:
             for root, dirs, files in os.walk("simple_images"):
                 for file in files:
